@@ -29,24 +29,6 @@ Before running this application, make sure you have:
 3. **Supabase account** and project
 4. **MongoDB Atlas account** (or local MongoDB instance)
 
-## Environment Variables
-
-Create a `.env.local` file in the root directory with the following variables:
-
-```env
-# Supabase Configuration
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-
-# MongoDB Configuration
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/blog_summarizer?retryWrites=true&w=majority
-
-# Next.js Configuration (for production)
-NEXTAUTH_SECRET=your_secret_key_here
-NEXTAUTH_URL=https://your-deployed-url.vercel.app
-```
-
-## Database Setup
 
 ### Supabase Setup
 
