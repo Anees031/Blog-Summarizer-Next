@@ -4,7 +4,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Blog Summarizer - Smart Content Analysis',
+  title: 'Blog Genius - Smart Content Analysis',
   description: 'Transform lengthy blog posts into concise summaries with AI-powered translation',
 }
 

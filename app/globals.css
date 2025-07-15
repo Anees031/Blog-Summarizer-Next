@@ -1,32 +1,28 @@
+
 /* Tailwind Directives */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Professional Black and Blue Theme */
 :root {
-  --background: 0 0% 3%;
-  --foreground: 210 40% 95%;
-  --card: 0 0% 6%;
-  --card-foreground: 210 40% 95%;
-  --primary: 217 91% 60%; /* Professional blue */
-  --primary-foreground: 0 0% 98%;
-  --secondary: 214 95% 50%; /* Bright blue */
-  --secondary-foreground: 0 0% 98%;
-  --accent: 210 100% 70%; /* Light blue accent */
-  --accent-foreground: 0 0% 10%;
-  --danger: 0 84% 60%;
-  --danger-foreground: 210 40% 95%;
+  --background: 0 0% 100%; /* White background */
+  --foreground: 260 20% 20%; /* Dark purple text */
+  --card: 260 60% 98%; /* Very light purple card */
+  --card-foreground: 260 20% 20%; /* Dark purple text */
+  --primary: 260 80% 60%; /* Rich purple */
+  --primary-foreground: 0 0% 100%; /* White */
+  --secondary: 260 70% 70%; /* Lighter purple accent */
+  --secondary-foreground: 260 20% 20%; /* Dark purple text */
+  --accent: 260 100% 90%; /* Soft purple highlight */
+  --accent-foreground: 260 20% 20%; /* Dark purple text */
+  --danger: 0 84% 60%; /* Red for danger states */
+  --danger-foreground: 0 0% 100%; /* White */
   --radius: 1rem;
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(96, 165, 250, 0.04) 0%, transparent 50%),
-    linear-gradient(135deg, #000000 0%, #0f0f0f 100%);
+  background: hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   min-height: 100vh;
@@ -43,8 +39,8 @@ body::before {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.03) 0%, transparent 30%),
-    radial-gradient(circle at 70% 30%, rgba(96, 165, 250, 0.02) 0%, transparent 40%);
+    radial-gradient(circle at 30% 70%, rgba(139, 92, 246, 0.03) 0%, transparent 30%),
+    radial-gradient(circle at 70% 30%, rgba(167, 139, 250, 0.02) 0%, transparent 40%);
   animation: glistenMove 20s ease-in-out infinite;
   pointer-events: none;
   z-index: -1;
@@ -73,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
   transition: all var(--transition);
 }
 
@@ -81,12 +77,12 @@ a {
   color: hsl(var(--accent));
   text-decoration: none;
   transition: color var(--transition);
-  text-shadow: 0 0 8px rgba(59, 130, 246, 0.15);
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.15);
 }
 
 a:hover {
   color: hsl(var(--secondary));
-  text-shadow: 0 0 12px rgba(59, 130, 246, 0.25);
+  text-shadow: 0 0 12px rgba(167, 139, 250, 0.25);
 }
 
 button, input, select, textarea {
@@ -95,15 +91,10 @@ button, input, select, textarea {
 }
 
 .card-professional {
-  background: rgba(8, 12, 20, 0.90);
+  background: hsl(var(--card));
   border-radius: var(--radius);
-  box-shadow: 
-    0 8px 32px 0 rgba(59, 130, 246, 0.15),
-    0 4px 16px 0 rgba(37, 99, 235, 0.1),
-    inset 0 1px 0 rgba(59, 130, 246, 0.08);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  backdrop-filter: blur(24px) saturate(1.4);
-  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  box-shadow: 0 4px 24px 0 rgba(139, 92, 246, 0.08), 0 1.5px 6px 0 rgba(139, 92, 246, 0.04);
+  border: 1.5px solid hsl(var(--accent));
   transition: all var(--transition);
   position: relative;
   overflow: hidden;
@@ -116,7 +107,7 @@ button, input, select, textarea {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.08), transparent);
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.08), transparent);
   animation: shimmer 4s infinite;
 }
 
@@ -127,7 +118,7 @@ button, input, select, textarea {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
 }
 
 @keyframes shimmer {
@@ -136,67 +127,66 @@ button, input, select, textarea {
 }
 
 .card-professional:hover {
-  box-shadow: 
-    0 16px 48px 0 rgba(59, 130, 246, 0.25),
-    0 8px 24px 0 rgba(37, 99, 235, 0.15),
-    inset 0 1px 0 rgba(59, 130, 246, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.12), 0 4px 16px 0 rgba(139, 92, 246, 0.08);
   border-color: hsl(var(--primary));
-  background: rgba(12, 16, 28, 0.95);
-  transform: translateY(-3px);
+  background: hsl(var(--card));
+  transform: translateY(-2px);
 }
 
 .text-accent {
-  color: hsl(var(--accent));
-  text-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+  color: hsl(var(--secondary));
 }
 
 .text-primary {
   color: hsl(var(--primary));
-  text-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
 }
 
 .text-secondary {
-  color: hsl(var(--secondary));
-  text-shadow: 0 0 6px rgba(59, 130, 246, 0.15);
+  color: hsl(var(--foreground));
+  opacity: 0.7;
 }
 
 /* Enhanced frosted glass effect for sections */
 .frosted-section {
-  background: rgba(8, 12, 20, 0.85);
+  background: rgba(26, 14, 46, 0.85);
   border-radius: var(--radius);
   box-shadow: 
-    0 4px 24px 0 rgba(59, 130, 246, 0.1),
-    inset 0 1px 0 rgba(59, 130, 246, 0.05);
+    0 4px 24px 0 rgba(139, 92, 246, 0.1),
+    inset 0 1px 0 rgba(139, 92, 246, 0.05);
   backdrop-filter: blur(20px) saturate(1.3);
   -webkit-backdrop-filter: blur(20px) saturate(1.3);
-  border: 1px solid rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.15);
   position: relative;
 }
 
-/* Blue glowing effects for interactive elements */
-.glow-blue {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+/* Purple glowing effects for interactive elements */
+.glow-purple {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
 }
 
-.glow-blue:hover {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+.glow-purple:hover {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
 }
 
-/* Enhanced input styling */
+input, button, select, textarea {
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+
 input:focus {
-  box-shadow: 
-    0 0 0 2px rgba(59, 130, 246, 0.3),
-    0 0 20px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 0 2px hsl(var(--primary)), 0 0 8px hsl(var(--accent));
   border-color: hsl(var(--primary));
 }
 
-/* Button enhancements with blue highlights */
 button {
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.08);
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+  color: hsl(var(--primary-foreground));
 }
 
 button:hover {
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.12);
+  background: linear-gradient(90deg, hsl(var(--secondary)), hsl(var(--primary)));
   transform: translateY(-1px);
 }
 
@@ -239,18 +229,29 @@ button:hover {
   animation: shimmer 3s ease-in-out infinite;
 }
 
-/* Professional blue status indicators */
+/* Professional purple status indicators */
 .text-green-500 {
   color: #10b981 !important;
-  text-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
 }
-
-.text-blue-500 {
+.text-purple-500, .text-blue-500 {
   color: hsl(var(--primary)) !important;
-  text-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
 }
-
 .text-red-500 {
   color: #ef4444 !important;
-  text-shadow: 0 0 8px rgba(239, 68, 68, 0.3);
-} 
+}
+
+/* Remove dark gradients and blue tones from backgrounds */
+.animate-gradient-move, .bg-gradient-to-br, .bg-gradient-to-r, .bg-gradient-to-l {
+  background: none !important;
+}
+
+/* Remove dark floating elements */
+.absolute.bg-blue-500\/5, .absolute.bg-blue-400\/8, .absolute.bg-blue-300\/4, .absolute.bg-blue-500\/6, .absolute.bg-blue-400\/7, .absolute.bg-blue-300\/5 {
+  display: none !important;
+}
+
+/* Remove dark shimmer */
+.animate-shimmer {
+  background: none !important;
+  animation: none !important;
+}

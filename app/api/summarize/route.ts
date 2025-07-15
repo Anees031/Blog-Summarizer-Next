@@ -103,7 +103,9 @@ export async function POST(request: NextRequest) {
             word_count: scrapedContent.wordCount,
             author: scrapedContent.author,
             published_date: scrapedContent.publishedDate,
-            summary_id: supabaseData?.id
+            summary_id: supabaseData?.id,
+            summary_english: englishSummary, // Save English summary
+            summary_urdu: urduSummary        // Save Urdu summary
           }
 
           await collection.insertOne(contentData)
@@ -137,8 +139,25 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Handle GET requests (optional - for testing)
-export async function GET() {
+// Handle GET requests (dashboard summaries)
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url)
+  if (searchParams.get('list') === '1') {
+    // Fetch summaries from Supabase
+    try {
+      const { data, error } = await supabase
+        .from('blog_summaries')
+        .select('*')
+        .order('created_at', { ascending: false })
+      if (error) {
+        return NextResponse.json({ error: error.message }, { status: 500 })
+      }
+      return NextResponse.json({ summaries: data || [] })
+    } catch (err) {
+      return NextResponse.json({ error: 'Failed to fetch summaries' }, { status: 500 })
+    }
+  }
+  // Default response
   return NextResponse.json({
     message: 'Blog Summarizer API',
     usage: 'POST to this endpoint with { "url": "https://example.com/blog" }',
