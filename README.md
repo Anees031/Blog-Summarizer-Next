@@ -136,7 +136,12 @@ You can easily deploy this app for free using [Vercel](https://vercel.com/):
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
    - `MONGODB_URI`
 5. **Deploy!**
-https://blog-summarizer-next.vercel.app/
+   
+App Link: https://blog-summarizer-next.vercel.app/
+
+
+Github Link: https://github.com/Anees031/Blog-Summarizer-Next
+
 Vercel will build and host your app. After deployment, your app will be live at your Vercel domain.
 
 ---
